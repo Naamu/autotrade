@@ -42,7 +42,7 @@ upbit = pyupbit.Upbit(access, secret)
 print("autotrade start")
 
 coin_name = "KRW-DOGE"
-k = 0.1
+k = 0.2
 # 자동매매 시작
 while True:
     try:
@@ -59,9 +59,9 @@ while True:
                 if krw > 5000:
                     upbit.buy_market_order(coin_name, krw*0.9995)
         else:
-            vet = get_balance("VET")
-            if vet > 19.7:
-                upbit.sell_market_order(coin_name, vet*0.9995)
+            doge = get_balance("DOGE")
+            if doge > 6.78:
+                upbit.sell_market_order(coin_name, doge*0.9995)
         time.sleep(1)
     except Exception as e:
         print(e)
